@@ -49,9 +49,35 @@
 
 """
 
+"""
+1. Use sliding window, make sure that the window without any repeated characters.
+2. while s[r] in the set, than shrink the window from the leftmost, continue to remove s[l] and increment l until s[r] not in set again.
+3. add s[r] to the set, and cal max_len 
+4. return max_len
+"""
+
+
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
+        char_set = set()
+        l = 0
+        max_len = 0
 
-        pass
+        for r in range(len(s)):
+            while s[r] in char_set:
+                char_set.remove(s[l])
+                l += 1
+
+            char_set.add(s[r])
+            max_len = max(max_len, r - l + 1)
+
+        return max_len
 # leetcode submit region end(Prohibit modification and deletion)
+
+
+if __name__ == '__main__':
+    s = Solution()
+    print(s.lengthOfLongestSubstring("abcabcbb"))
+    print(s.lengthOfLongestSubstring("bbbbb"))
+    print(s.lengthOfLongestSubstring("pwwkew"))
