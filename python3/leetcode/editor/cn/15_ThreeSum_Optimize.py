@@ -26,6 +26,8 @@ Space: O(1) or O(n)
 from typing import List
 
 
+# 第一遍 2024.4.16
+
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
@@ -43,28 +45,22 @@ class Solution:
             # 3. inner loop
             while l < r:
                 val = nums[i] + nums[l] + nums[r]
-                if val == 0:
-                    res.append([nums[i], nums[l], nums[r]])
-                    # need to eliminate the duplicates
-                    l, r = self.nextPointer(l, r, nums)
-                elif val > 0:
-                    r -= 1
-                else:
-                    l += 1
-        return res
 
-    def nextPointer(self, l, r, nums):
-        while l < r:
-            if nums[l] == nums[l + 1]:
-                l += 1
-            elif nums[r] == nums[r - 1]:
-                r = r - 1
-            else:
-                l += 1
-                r -= 1
-                # should return
-                return l, r
-        return l, r
+                if val > 0:
+                    r -= 1
+
+                elif val < 0:
+                    l += 1
+
+                else:
+                    res.append([nums[i], nums[l], nums[r]])
+                    # update ptrs, only need to increment l
+                    # [-2,-2,0,0,2,2]
+                    l += 1
+                    while nums[l] == nums[l - 1] and l < r:
+                        l += 1
+
+        return res
 
 
 # leetcode submit region end(Prohibit modification and deletion)

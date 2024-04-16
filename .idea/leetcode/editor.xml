@@ -91,6 +91,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/39_CombinationSum.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/39_CombinationSum.md" />
+              <option name="frontendQuestionId" value="leetcode.cn39" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/39_CombinationSum.py" />
+              <option name="titleSlug" value="combination-sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/3_LongestSubstringWithoutRepeatingCharacters.py">
           <value>
             <LeetcodeEditor>
