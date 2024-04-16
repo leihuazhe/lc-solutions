@@ -14,6 +14,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/1700_NumberOfStudentsUnableToEatLunch.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/1700_NumberOfStudentsUnableToEatLunch.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1700" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/1700_NumberOfStudentsUnableToEatLunch.py" />
+              <option name="titleSlug" value="number-of-students-unable-to-eat-lunch" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/1702_MaximumBinaryStringAfterChange.py">
           <value>
             <LeetcodeEditor>

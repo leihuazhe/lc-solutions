@@ -61,22 +61,33 @@ class ListNode:
         self.next = next
 
 
+"""
+
+
+4.16, 注意在获取值时,使用 l1.val 而不是 l1.next
+"""
+
+
 class Solution:
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+        # 1. initialize a dummy node to trace the result.
         dummy = ListNode()
+        # define cur
         cur = dummy
+        # define a carry
         carry = 0
+        # loop conditions
         while l1 or l2 or carry:
             v1 = l1.val if l1 else 0
             v2 = l2.val if l2 else 0
-            sum = v1 + v2 + carry
-            cur.next = ListNode(sum % 10)
-            carry = sum // 10
-
-            # move forward
+            val = v1 + v2 + carry
+            cur.next = ListNode(val % 10)
+            carry = val // 10
+            #     next
             cur = cur.next
             l1 = l1.next if l1 else None
             l2 = l2.next if l2 else None
 
         return dummy.next
+
         # leetcode submit region end(Prohibit modification and deletion)
