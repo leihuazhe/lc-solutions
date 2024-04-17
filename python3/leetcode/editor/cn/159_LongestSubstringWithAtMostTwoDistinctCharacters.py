@@ -20,6 +20,12 @@ Difficulty:
 
 """
 
+"""
+1.容易遗漏的一步, l 移除后,一定要从 dict 中删除。
+1.1.怎么删? 找出 l 左边的那个删掉. ---> min_index
+2. python3 中 dict 的用法(没有 map)
+"""
+
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:

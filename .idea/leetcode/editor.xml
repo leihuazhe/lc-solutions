@@ -14,14 +14,47 @@
             </LeetcodeEditor>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/1700_number-of-students-unable-to-eat-lunch.py">
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/15_ThreeSum.py">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/1700_number-of-students-unable-to-eat-lunch.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/15_ThreeSum.md" />
+              <option name="frontendQuestionId" value="leetcode.cn15" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/15_ThreeSum.py" />
+              <option name="titleSlug" value="3sum" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/167_TwoSumIiInputArrayIsSorted.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/167_TwoSumIiInputArrayIsSorted.md" />
+              <option name="frontendQuestionId" value="leetcode.cn167" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/167_TwoSumIiInputArrayIsSorted.py" />
+              <option name="titleSlug" value="two-sum-ii-input-array-is-sorted" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/1700_NumberOfStudentsUnableToEatLunch.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/1700_NumberOfStudentsUnableToEatLunch.md" />
               <option name="frontendQuestionId" value="leetcode.cn1700" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/1700_number-of-students-unable-to-eat-lunch.py" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/1700_NumberOfStudentsUnableToEatLunch.py" />
               <option name="titleSlug" value="number-of-students-unable-to-eat-lunch" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/1702_MaximumBinaryStringAfterChange.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/1702_MaximumBinaryStringAfterChange.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1702" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/1702_MaximumBinaryStringAfterChange.py" />
+              <option name="titleSlug" value="maximum-binary-string-after-change" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -36,14 +69,36 @@
             </LeetcodeEditor>
           </value>
         </entry>
-        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/2_add-two-numbers.py">
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/2_AddTwoNumbers.java">
           <value>
             <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/2_add-two-numbers.md" />
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/2_AddTwoNumbers.md" />
               <option name="frontendQuestionId" value="leetcode.cn2" />
               <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/2_add-two-numbers.py" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/2_AddTwoNumbers.py" />
               <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/2_AddTwoNumbers.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/2_AddTwoNumbers.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/2_AddTwoNumbers.py" />
+              <option name="titleSlug" value="add-two-numbers" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/python3/leetcode/editor/cn/39_CombinationSum.py">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/39_CombinationSum.md" />
+              <option name="frontendQuestionId" value="leetcode.cn39" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/39_CombinationSum.py" />
+              <option name="titleSlug" value="combination-sum" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -55,39 +110,6 @@
               <option name="host" value="leetcode.cn" />
               <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/3_LongestSubstringWithoutRepeatingCharacters.py" />
               <option name="titleSlug" value="longest-substring-without-repeating-characters" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/s/leetcode/editor/cn/2_add-two-numbers.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/2_add-two-numbers.md" />
-              <option name="frontendQuestionId" value="leetcode.cn2" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/2_add-two-numbers.py" />
-              <option name="titleSlug" value="add-two-numbers" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/s/leetcode/editor/cn/[2]两数相加.java">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/2_add-two-numbers.md" />
-              <option name="frontendQuestionId" value="leetcode.cn2" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/2_add-two-numbers.py" />
-              <option name="titleSlug" value="add-two-numbers" />
-            </LeetcodeEditor>
-          </value>
-        </entry>
-        <entry key="$PROJECT_DIR$/s/leetcode/editor/cn/[2]两数相加.py">
-          <value>
-            <LeetcodeEditor>
-              <option name="contentPath" value="$PROJECT_DIR$/python3/leetcode/editor/cn/doc/content/2_add-two-numbers.md" />
-              <option name="frontendQuestionId" value="leetcode.cn2" />
-              <option name="host" value="leetcode.cn" />
-              <option name="path" value="$PROJECT_DIR$/python3/leetcode/editor/cn/2_add-two-numbers.py" />
-              <option name="titleSlug" value="add-two-numbers" />
             </LeetcodeEditor>
           </value>
         </entry>
