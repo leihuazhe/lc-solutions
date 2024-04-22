@@ -1,0 +1,75 @@
+# Elements can be chosen only once
+
+> 在 for 循环中,使用 i + 1,这样就可以过滤已经被选择的元素.
+
+
+# Elements can be chosen multiple times
+
+> 在 for 循环中,使用 i ,这样就仍然可以选择已经被选择的元素.
+
+# non-repeating elements
+
+不需要剪枝,所以不用排序数组
+
+
+# Repeating elements
+
+需要剪枝,所以需要排序数组
+
+
+---
+
+# 题目
+
+- 216
+- 39
+- 40
+- 46
+- 47
+- 77
+- 78
+- 90
+- https://leetcode.cn/problems/7p8L0Z/description/
+- https://leetcode.cn/problems/VvJkup/description/
+- https://leetcode.cn/problems/4sjJUc/description/
+- https://leetcode.cn/problems/uUsW3B/description/
+- https://leetcode.cn/problems/Ygoe9J/description/
+
+
+
+
+---
+
+
+
+
+
+
+本题是元素可重可复选的问题
+如何让被选择的元素继续复选呢? 只要在 for 循环中 将 i +1 修改为 i 即可.
+
+# 78.子集: 元素无重不可复选
+
+# 组合(元素无重不可复选)
+
+是 78 的演变, 比如从 [1,2,3] 中拿出 2 个元素组合.
+
+刚才讲的组合/子集问题使用 start 变量保证元素 nums[start] 之后只会出现 nums[start+1..] 中的元素，通过固定元素的相对位置保证不出现重复的子集.
+
+# 46 排列: 元素无重不可复选
+
+但排列问题本身就是让你穷举元素的位置，nums[i] 之后也可以出现 nums[i] 左边的元素，所以之前的那一套玩不转了，需要额外使用
+used 数组来标记哪些元素还可以被选择。
+
+我们用 used 数组标记已经在路径上的元素避免重复选择，然后收集所有叶子节点上的值，就是所有全排列的结果：
+
+# 元素可重不可复选
+
+重点：总结，剪枝需要先排序数组
+
+# 总结
+
+1.子集/组合问题,因为需要考虑不能回溯已经回溯的内容,所以需要使用 start 来标识从哪个 position 开始。
+2.排列问题,不需要考虑从哪个pos开始，所以不需要 start, 但是要考虑不能回溯已回溯的,所以需要 used 来标识已访问到. (1,2,3
+访问了1后，不能再访问1)
+3.剪枝：剪枝问题需要先排序数组。(如果不关注顺序,则就需要剪枝)
