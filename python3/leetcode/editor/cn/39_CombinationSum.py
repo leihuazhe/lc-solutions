@@ -66,22 +66,16 @@ The test cases are generated such that the number of unique combinations that su
 """
 from typing import List
 
-"""
-repeated elements, can be chosen multiple times. 
-
-"""
-
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
         res = []
         comb = []
-        # candidates.sort()
 
         def dfs(start, total):
             if total == target:
-                res.append(comb.copy())
+                res.append(comb[:])
                 return
 
             for i in range(start, len(candidates)):
@@ -95,10 +89,4 @@ class Solution:
         dfs(0, 0)
 
         return res
-
-
 # leetcode submit region end(Prohibit modification and deletion)
-
-
-if __name__ == '__main__':
-    print(Solution().combinationSum([2, 3, 6, 7], 7))
