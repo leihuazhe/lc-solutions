@@ -48,20 +48,7 @@
 
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
-
-    def climbStairs(self, n: int) -> int:
-        if n <= 1:
-            return 1
-        dp = [0] * (n + 1)
-        dp[1] = 1
-        dp[2] = 2
-
-        for i in range(3, n + 1):
-            dp[i] = dp[i - 1] + dp[i - 2]
-        return dp[n]
-
-
-"""
+    """
             1.确定dp数组（dp table）以及下标的含义
                 dp[i] = dp[i-1] + 1
                 dp[i] = dp[i-2] + 2
@@ -75,15 +62,33 @@ class Solution:
             5.举例推导dp数组
 """
 
+    def climbStairs(self, n: int) -> int:
+
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+
+        # 1. dp[i] = dp[i-1] + dp[i-2]
+        # 3.dp数组如何初始化
+        dp = [0] * (n + 1)
+        # 2.
+        dp[1] = 1
+        dp[2] = 2
+        # iterate
+        for i in range(3,n + 1):
+            dp[i] = dp[i-1] + dp[i-2]
+
+        return dp[n]
+
+
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 
 if __name__ == '__main__':
-
     s = Solution()
     print(s.climbStairs(1))
     print(s.climbStairs(2))
     print(s.climbStairs(3))
     print(s.climbStairs(4))
-

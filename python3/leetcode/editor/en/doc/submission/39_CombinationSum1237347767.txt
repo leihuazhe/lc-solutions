@@ -1,0 +1,28 @@
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        res = []
+        comb = []
+        # depth first search
+        def dfs(start,total):
+            if total == target:
+                res.append(comb[:])
+                return
+            
+            if total > target:
+                return 
+
+            for i in range(start, len(candidates)):
+                comb.append(candidates[i])
+                dfs(i,total + candidates[i])
+                comb.pop()
+            
+        
+        dfs(0,0)
+
+        return res
+                    
+        
+
+        
+# runtime:46 ms
+# memory:16.7 MB

@@ -89,21 +89,18 @@ Welcome to a series that not only solves problems but also demystifies the thoug
 class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool:
         seen = set()
-
-        for i in range(9):
-            for j in range(9):
-                if board[i][j] != '.':
-                    row_key = f'row-{i}-{board[i][j]}'
-                    col_key = f'col-{j}-{board[i][j]}'
-                    box_idx = i // 3 * 3 + j // 3
-                    print(box_idx)
-                    box_key = f'box-{i // 3} + {j // 3}-{board[i][j]}'
-                    if row_key in seen or col_key in seen or box_key in seen:
+        for row in range(9):
+            for col in range(9):
+                cur_value = board[row][col]
+                if cur_value != ".":
+                    row_key = f"row_{row}_{cur_value}"
+                    col_key = f"col_{col}_{cur_value}"
+                    grid_key = f"grid_{(row // 3) * 3 + col // 3}_{cur_value}"
+                    if row_key in seen or col_key in seen or grid_key in seen:
                         return False
-
                     seen.add(row_key)
                     seen.add(col_key)
-                    seen.add(box_key)
+                    seen.add(grid_key)
         return True
 
 
