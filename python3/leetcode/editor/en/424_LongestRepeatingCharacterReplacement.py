@@ -49,20 +49,24 @@ There may exists other ways to achieve this answer too.
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def characterReplacement(self, s: str, k: int) -> int:
-        freq = {}
-        res = 0
+        count = [0] * 26
         l = 0
+        res = 0
+        max_f = 0
         for r in range(len(s)):
-            if s[l] != s[r]:
-                l = r
+            # 第一步是把 r 加入数组,再去进行计算
+            count[ord(s[r]) - ord('A')] += 1
+            max_f = max(max(count), max_f)
+            while r - l + 1 - max_f > k:
+                count[ord(s[l]) - ord('A')] -= 1
+                l += 1
             res = max(res, r - l + 1)
-
         return res
+        # leetcode submit region end(Prohibit modification and deletion)
 
-
-# leetcode submit region end(Prohibit modification and deletion)
 
 if __name__ == '__main__':
     s = Solution()
     # print(s.characterReplacement("AAABBCCCCDDDD", 2))
-    print(s.characterReplacement("AAABBC", 2))
+    # print(s.characterReplacement("AAABBC", 2))
+    print(s.characterReplacement("AABABBA", 1))

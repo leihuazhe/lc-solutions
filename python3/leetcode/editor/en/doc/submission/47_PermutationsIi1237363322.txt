@@ -1,0 +1,29 @@
+class Solution:
+    def permuteUnique(self, nums: List[int]) -> List[List[int]]:
+        # pruning
+        nums.sort()
+        res = []
+        comb = []
+        visited = [False] * len(nums)
+
+        def dfs():
+            if len(comb) == len(nums):
+                res.append(comb[:])
+                return 
+            
+            for i in range(len(nums)):
+
+                if not visited[i]:
+                    if i > 0 and nums[i] == nums[i-1] and visited[i-1]:
+                        continue
+                    comb.append(nums[i])
+                    visited[i] = True
+                    dfs()
+                    comb.pop()
+                    visited[i] = False
+
+        dfs()
+
+        return res
+# runtime:70 ms
+# memory:16.8 MB
