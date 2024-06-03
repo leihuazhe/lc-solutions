@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
+from collections import deque
 from typing import List
 
 
@@ -56,6 +57,32 @@ from typing import List
 class Solution:
     # TODO 没有思路
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        pass
+        res = []
+        # monotonous queue
+        # 从左到右,从大到小, 从栈底到栈顶,从大到小
+        # # From left to right, in descending order
+        # #  From bottom to top of the stack, in descending order
+        queue = deque()
+        for i in range(len(nums)):
+            # 1. out
+            while queue and nums[i] >= nums[queue[-1]]:
+                queue.pop()
+            # 2. in
+            queue.append(i)
+            # sliding 如何移除左侧
+            if i - queue[0] + 1 > k:
+                queue.popleft()
+            # 3. res
+            if i >= k - 1:
+                res.append(nums[queue[0]])
 
-# leetcode submit region end(Prohibit modification and deletion)
+        return res
+
+    # leetcode submit region end(Prohibit modification and deletion)
+
+
+if __name__ == '__main__':
+    s = Solution()
+    print(s.maxSlidingWindow([5, 4, 3, 2, 1, 10, 13, 15], 3))
+    print(s.maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3))
+    print(s.maxSlidingWindow([1, -1], 1))
