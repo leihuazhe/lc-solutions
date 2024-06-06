@@ -64,6 +64,26 @@ from typing import List
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
-        pass
+        ans = []
+        path = []
+
+        def dfs(total, start):
+            if total == 0:
+                ans.append(path[:])
+                return
+            for i in range(start, len(candidates)):
+                if total < 0:
+                    continue
+
+                path.append(candidates[i])
+                dfs(total - candidates[i], i)
+                path.pop()
+
+        dfs(target, 0)
+        return ans
+
 
 # leetcode submit region end(Prohibit modification and deletion)
+if __name__ == '__main__':
+    s = Solution()
+    print(s.combinationSum([2, 3, 6, 7], 7))
