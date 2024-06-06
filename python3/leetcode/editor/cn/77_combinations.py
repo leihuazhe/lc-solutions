@@ -51,8 +51,30 @@ class Solution:
 
     # n =4, k =2
     # [1,2,3,4] -> [1,2][1,3][1,4],
-
+    # 给定两个整数 n 和 k，返回范围 [1, n] 中所有可能的 k 个数的组合。
     def combine(self, n: int, k: int) -> List[List[int]]:
+        res = []
+        cur = []
+
+        #
+        def dfs(i):
+            # 还需要选几个?
+            d = k - len(cur)
+            if i < d:
+                return
+            if len(cur) == k:
+                res.append(cur.copy())
+                return
+            for j in range(i, 0, -1):
+                cur.append(j)
+                dfs(j - 1)
+                cur.pop()
+
+        dfs(n)
+
+        return res
+
+    def combineV2(self, n: int, k: int) -> List[List[int]]:
         res = []
         cur = []
 
@@ -71,4 +93,10 @@ class Solution:
 
         return res
 
+
 # leetcode submit region end(Prohibit modification and deletion)
+
+
+if __name__ == '__main__':
+    s = Solution()
+    s.combine(6, 3)

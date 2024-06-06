@@ -75,7 +75,7 @@ class Solution:
         comb = []
 
         def dfs(start, total):
-            if len(comb) == 3 and total == n:
+            if len(comb) == k and total == n:
                 res.append(comb.copy())
 
             for i in range(start, 10):
