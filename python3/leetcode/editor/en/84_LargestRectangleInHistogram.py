@@ -47,14 +47,20 @@ class Solution:
     def largestRectangleArea(self, heights: List[int]) -> int:
         st = []
         res = 0
-        min_height = 0
+
+
+
         for i in range(len(heights)):
             # out
-            while st and heights[i] > st[-1][0]:
+            while st and heights[i] > st[-1]:
                 st.pop()
             # in
-            st.append((heights[i], min(min_height, heights[i])))
-            res = max(res, st[0][0] * len(st))
+            # st.append((heights[i], min(min_height, heights[i])))
+            st.append(heights[i])
+            # res = max(res, st[0][0] * len(st))
+
+
+
 
         return res
 
@@ -64,5 +70,5 @@ class Solution:
 if __name__ == '__main__':
     s = Solution()
     # 2,1,5,6,2,3
-    print(s.largestRectangleArea([2, 1, 5, 6, 2, 3]))
+    # print(s.largestRectangleArea([2, 1, 5, 6, 2, 3]))
     print(s.largestRectangleArea([2, 1, 5, 6, 7, 3]))
