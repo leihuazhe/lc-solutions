@@ -81,18 +81,21 @@ from typing import List
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        l = 0
-        for r in range(1, len(nums)):
-            if nums[r] != nums[l]:
-                l += 1
-                nums[l] = nums[r]
-
-        return l + 1
+        #     index = 0 肯定保留,所以从 index = 1 开始，并判断加入不重复的元素
+        k = 1
+        for i in range(1, len(nums)):
+            # 有序数组
+            if nums[i] != nums[i - 1]:
+                nums[k] = nums[i]
+                k += 1
+        return k
 
     # leetcode submit region end(Prohibit modification and deletion)
 
 
 if __name__ == '__main__':
     s = Solution()
+    print(s.removeDuplicates([1, 2, 3, 3, 3, 3, 4]))
+    print(s.removeDuplicates([1, 2, 3, 3, 5, 7, 8, 8, 9]))
     print(s.removeDuplicates([1, 1, 2]))
     print(s.removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4]))
