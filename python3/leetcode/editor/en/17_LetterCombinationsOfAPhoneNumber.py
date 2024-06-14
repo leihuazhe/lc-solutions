@@ -82,5 +82,13 @@ class Solution:
 # leetcode submit region end(Prohibit modification and deletion)
 
 if __name__ == '__main__':
+    s = "abcdefg"
+    print(s[:-1])  # 不包含 -1
+    print(s[::-1])
+    print(s[1:-1:3])
+
+    n = len(s) - 13 % len(s)
+    res = s[n:] + s[:n]
+
     s = Solution()
     print(s.letterCombinations("23"))
