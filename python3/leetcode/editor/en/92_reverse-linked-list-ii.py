@@ -72,4 +72,5 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print_link_node(s.reverseBetween(to_link_node([1, 2, 3, 4, 5, 6, 7]), 2, 5))
+    # print_link_node(s.reverseBetween(to_link_node([1, 2, 3, 4, 5, 6, 7]), 2, 5))
+    print_link_node(s.reverseBetween(to_link_node([1, 2, 3, 4, 5, 6, 7]), 1, 5))
