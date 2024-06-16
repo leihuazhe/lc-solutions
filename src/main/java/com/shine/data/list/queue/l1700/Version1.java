@@ -29,25 +29,25 @@ public class Version1 {
         return queue.size();
     }
 
-    public static class ListNode {
+    public static class ListNodeJ {
         int val;
-        ListNode next;
+        ListNodeJ next;
 
-        public ListNode(int val) {
+        public ListNodeJ(int val) {
             this.val = val;
         }
     }
 
     public static class Queue {
         //front
-        ListNode left;
+        ListNodeJ left;
         //back
-        ListNode right;
+        ListNodeJ right;
         int size;
 
 
         void enqueue(int val) {
-            ListNode node = new ListNode(val);
+            ListNodeJ node = new ListNodeJ(val);
             if (right == null) {
                 left = node;
                 right = node;

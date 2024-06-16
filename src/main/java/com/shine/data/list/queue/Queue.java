@@ -10,8 +10,8 @@ package com.shine.data.list.queue;
  */
 public class Queue {
     // f x x x x x x b
-    ListNode left;  // front of Queue   front -> [1,2,3]
-    ListNode right; // back of Queue   [1,2,3] <- back
+    ListNodeJ left;  // front of Queue   front -> [1,2,3]
+    ListNodeJ right; // back of Queue   [1,2,3] <- back
 
     public Queue() {
         this.left = null;
@@ -19,7 +19,7 @@ public class Queue {
     }
 
     public void enqueue(int val) {
-        ListNode newNode = new ListNode(val);
+        ListNodeJ newNode = new ListNodeJ(val);
         if (this.right != null) {
             // Queue is not empty
             this.right.next = newNode;
@@ -43,7 +43,7 @@ public class Queue {
     }
 
     public void print() {
-        ListNode cur = this.left;
+        ListNodeJ cur = this.left;
         while (cur != null) {
             System.out.print(cur.val + " -> ");
             cur = cur.next;
@@ -51,11 +51,11 @@ public class Queue {
         System.out.println();
     }
 
-    public static class ListNode {
+    public static class ListNodeJ {
         int val;
-        ListNode next;
+        ListNodeJ next;
 
-        public ListNode(int val) {
+        public ListNodeJ(int val) {
             this.val = val;
         }
     }
