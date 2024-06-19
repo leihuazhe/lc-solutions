@@ -74,6 +74,9 @@ def lowBound(nums: List[int]):
 
 
 def highBound(nums: List[int]):
+    # red: < target
+    # blue: >= target
+
     # neg -> red
     # pos -> blue
     l, r = 0, len(nums) - 1
@@ -86,13 +89,34 @@ def highBound(nums: List[int]):
     return r
 
 
+def lowBound(nums, target):
+    l, r = 0, len(nums) - 1
+    while l <= r:
+        mid = l + (r - l) // 2
+        if nums[mid] < target:  # red
+            l = mid + 1
+        else:
+            r = mid - 1
+    return l
+
+
 # leetcode submit region begin(Prohibit modification and deletion)
 class Solution:
-    def maximumCount(self, nums: List[int]) -> int:
-        neg = lowBound(nums) - 1
-        pos = highBound(nums) + 1
+    """
+    由于数组是有序的，我们可以二分找到第一个 ≥0 的数的下标 i，那么 [0,i−1][0,i-1][0,i−1] 中的数都小于 000，这恰好有 iii 个。
+    同样地，二分找到第一个 >0> 0>0 的数的下标 jjj，那么 [j,n−1][j,n-1][j,n−1] 中的数都大于 000，这有 n−jn-jn−j 个。
+    """
 
-        return max(neg + 1, len(nums) - pos)
+    def maximumCount(self, nums: List[int]) -> int:
+        # find the first element  i >= 0, then [0,i-1] < 0, is negative
+        # find the first element  j > 0, then [j,n-1] > 0,  is positive
+        neg = lowBound(nums, 0)
+        # j > 0 ==> j >= 1
+        #  j > 0 等价于 j >= 1
+        # j  >= 1 等价于 j >=2 - 1
+        pos = lowBound(nums, 1)
+
+        return max(neg, len(nums) - pos)
 
     # leetcode submit region end(Prohibit modification and deletion)
 
