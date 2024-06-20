@@ -47,6 +47,10 @@ def find_minV2(nums):
 
 
 if __name__ == '__main__':
+    nums = [0, 1, 2, 3, 4, 5]
+    for i in range(len(nums)):
+        print(i)
+
     find_minV2([2, 3, 4, 1])
     find_min([2, 2, 2, 3, 2, 2, 2])
     find_min([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1])
