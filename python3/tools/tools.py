@@ -6,6 +6,9 @@ class ListNode:
         self.val = val
         self.next = next
 
+    def __str__(self):
+        return str(self.val)
+
 
 def to_link_node(nums: List[int]) -> ListNode:
     dummy = ListNode()
