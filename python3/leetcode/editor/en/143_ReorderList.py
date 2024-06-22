@@ -66,21 +66,23 @@ class Solution:
         """
         Do not return anything, modify head in-place instead.
         """
-        cur = copy.deepcopy(head)
-        reversedHead, count = reverseList(cur)
-        cur = head
-        flag = True
+        r = copy.deepcopy(head)
+        reversedHead, count = reverseList(r)
+        cur = dummy = ListNode()
+        flag = False
         while count > 0:
-            if flag % 2 == 0:
+            if flag:
                 cur.next = reversedHead
                 reversedHead = reversedHead.next
             else:
                 cur.next = head
                 head = head.next
+            flag = not flag
             cur = cur.next
             count -= 1
-
-        print_link_node(head)
+        cur.next = None
+        head = dummy.next
+        print_link_node(dummy.next)
 
 
 def reverseList(head):
