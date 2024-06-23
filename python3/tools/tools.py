@@ -26,3 +26,33 @@ def print_link_node(head: ListNode):
         str_ += str(cur.val) + '->'
         cur = cur.next
     print(str_)
+
+
+# TreeNode
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+    def __str__(self):
+        return str(self.val)
+
+
+def to_tree_node(data, index):
+    node = None
+    if index < len(data):
+        if data[index] == None:
+            return
+        node = TreeNode(data[index])
+        node.left = to_tree_node(data, 2 * index + 1)  # [1, 3, 7, 15, ...]
+        node.right = to_tree_node(data, 2 * index + 2)  # [2, 5, 12, 25, ...]
+    return node
+
+# def print_tree_node(head: ListNode):
+#     str_ = ""
+#     cur = head
+#     while cur:
+#         str_ += str(cur.val) + '->'
+#         cur = cur.next
+#     print(str_)
