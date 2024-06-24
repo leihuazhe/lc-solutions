@@ -39,7 +39,7 @@ class TreeNode:
         return str(self.val)
 
 
-def to_tree_node(data, index):
+def to_tree_node(data, index=0):
     node = None
     if index < len(data):
         if data[index] == None:
