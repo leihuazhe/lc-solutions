@@ -51,27 +51,29 @@ Explanation: The root node's value is 5 but its right child's value is 4.
 from cmath import inf
 from typing import Optional
 
+from python3.tools.tools import *
+
 
 # leetcode submit region begin(Prohibit modification and deletion)
 # Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 
 
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        return self.check(root, -inf, inf)
 
-        def dfs(node: Optional[TreeNode], lower: int, upper: int):
-            if not node:
-                return True
-            if node.val <= lower or node.val >= upper:
-                return False
-            return dfs(node.left, lower, node.val) and dfs(node.right, node.val, upper)
+    def check(self, node, low, up):
+        if node is None:
+            return True
+        if node.val <= low or node.val >= up:
+            return False
 
-        return dfs(root, -inf, inf)
+        return self.check(node.left, low, node.val) and self.check(node.right, node.val, up)
 
 
 # leetcode submit region end(Prohibit modification and deletion)
@@ -79,10 +81,4 @@ class Solution:
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.isValidBST(root=TreeNode(val=2, left=TreeNode(val=1), right=TreeNode(val=3))))
-    print(s.isValidBST(root=
-                       TreeNode(val=13,
-                                left=TreeNode(10, TreeNode(9), TreeNode(12)),
-                                right=TreeNode(15, TreeNode(12), TreeNode(17)),
-                                ))
-          )
+    print(s.isValidBST(to_tree_node([5, 4, 6, None, None, 3, 7], 0)))
