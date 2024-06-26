@@ -20,6 +20,7 @@ class Solution:
 
 
 if __name__ == '__main__':
+
     s = Solution()
     res = s.find_ancestors(to_tree_node([1, 2, 3, 4, 5, None, None, 7]), 7)
     print(res)
