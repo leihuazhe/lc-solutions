@@ -98,10 +98,37 @@ class Solution:
 
     # leetcode submit region end(Prohibit modification and deletion)
 
+    def minWindow2(self, s: str, t: str) -> str:
+        freq = defaultdict(int)
+        for c in t:
+            freq[c] += 1
+
+        l, r = 0, 0
+        min_len = len(s) + 1
+        cnt = 0
+        res = ""
+        while r < len(s):
+            if freq[s[r]] > 0:
+                cnt += 1
+            freq[s[r]] -= 1
+            r += 1
+
+            while cnt == len(t):
+                if min_len > r - l + 1:
+                    min_len = r - l
+                    res = s[l:r]
+                if freq[s[l]] == 0:
+                    cnt -= 1
+                freq[s[l]] += 1
+                l += 1
+        return res
+
 
 if __name__ == '__main__':
     # print(ord('a'), ord('z'), ord('A'))
     s = Solution()
+    print(s.minWindow2("ab", "a"))
+    print(s.minWindow2("ADOBECODEBANC", "ABC"))
     print(s.minWindow("ACBBACA", "ABA"))
     # print(s.minWindow("ADOBECODEBANC", "ABC"))
     # print(s.minWindow("a", "a"))
