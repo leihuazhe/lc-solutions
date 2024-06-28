@@ -63,9 +63,43 @@ class Solution:
         right = self.buildTree(preorder[left_size + 1:], inorder[1 + left_size:])
         return TreeNode(preorder[0], left, right)
 
+    def find_ancestors(self, root: Optional[TreeNode], target: int):
+        if root is None:
+            return []
+        if root.val == target:
+            return [root.val]
+        #  return 以后 就是上一层了。当前这一层可以理解为: 4的父节点.
+        left = self.find_ancestors(root.left, target)
+        if left:
+            return [root.val] + left
+        right = self.find_ancestors(root.right, target)
+        if right:
+            return [root.val] + right
+
+    def all_ancestor(self, root: Optional[TreeNode], target):
+        ans = []
+
+        def dfs(node):
+            if node is None:
+                return False
+            if node.val == target:
+                ans.append(node.val)
+                return True
+            left = dfs(node.left)
+            right = dfs(node.right)
+
+            if left or right:
+                ans.append(node.val)
+                return True
+            
+        dfs(root)
+        return ans
+
 
 # leetcode submit region end(Prohibit modification and deletion)
 
 if __name__ == '__main__':
     s = Solution()
-    print(s.buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7]))
+    trees = s.buildTree([3, 9, 20, 15, 7], [9, 3, 15, 20, 7])
+    print(s.all_ancestor(trees, 15))
+    print(s.find_ancestors(trees, 15))
