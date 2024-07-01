@@ -1,3 +1,4 @@
+from collections import deque
 from typing import List
 
 
@@ -49,10 +50,17 @@ def to_tree_node(data, index=0):
         node.right = to_tree_node(data, 2 * index + 2)  # [2, 5, 12, 25, ...]
     return node
 
-# def print_tree_node(head: ListNode):
-#     str_ = ""
-#     cur = head
-#     while cur:
-#         str_ += str(cur.val) + '->'
-#         cur = cur.next
-#     print(str_)
+
+def print_tree_node(head: TreeNode):
+    str_ = ""
+    q = deque([head])
+    while q:
+        size = len(q)
+        for _ in range(size):
+            cur = q.popleft()
+            if cur.left:
+                q.append(cur.left)
+            if cur.right:
+                q.append(cur.right)
+            str_ += str(cur.val) + '->'
+    print(str_)

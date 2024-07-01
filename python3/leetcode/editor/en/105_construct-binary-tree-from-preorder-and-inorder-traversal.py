@@ -55,12 +55,11 @@ from python3.tools.tools import TreeNode
 #         self.right = right
 class Solution:
     def buildTree(self, preorder: List[int], inorder: List[int]) -> Optional[TreeNode]:
-        # 根据 preorder 的 头节点，在中序遍历中找 左子树的长度，和右子数的长度.
         if not preorder:
             return None
         left_size = inorder.index(preorder[0])
-        left = self.buildTree(preorder[1:left_size + 1], inorder[:left_size])
-        right = self.buildTree(preorder[left_size + 1:], inorder[1 + left_size:])
+        left = self.buildTree(preorder[1: left_size + 1], inorder[:left_size])
+        right = self.buildTree(preorder[left_size + 1:], inorder[left_size + 1:])
         return TreeNode(preorder[0], left, right)
 
     def find_ancestors(self, root: Optional[TreeNode], target: int):
