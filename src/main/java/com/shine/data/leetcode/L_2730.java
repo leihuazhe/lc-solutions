@@ -1,7 +1,16 @@
 package com.shine.data.leetcode;
 
+import java.util.HashMap;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class L_2730 {
+
+
     public int longestSemiRepetitiveSubstring(String s) {
+        ConcurrentHashMap x = new ConcurrentHashMap();
+        HashMap x2 = new HashMap();
+
+
         int repeatCnt = 0, res = 1;
         for (int j = 1, i = 0; j < s.length(); j++) {
             if (s.charAt(j) == s.charAt(j - 1)) repeatCnt++;
