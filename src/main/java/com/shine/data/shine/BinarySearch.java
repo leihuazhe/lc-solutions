@@ -1,5 +1,8 @@
 package com.shine.data.shine;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * BinarySearch
  *
@@ -11,6 +14,10 @@ public class BinarySearch {
 
 
   public static void main(String[] args) {
+    List<Integer> st = new ArrayList<>();
+    st.removeLast();
+
+
     System.currentTimeMillis();
     System.out.println(leftBound(new int[] {1, 2, 3, 4, 4, 4, 6, 6, 7}, 5));
     System.out.println(lowerBound(new int[] {1, 2, 3, 4, 4, 4, 5, 6, 7}, 4));
@@ -23,7 +30,7 @@ public class BinarySearch {
 
   // 闭区间写法 low bound, 第一个 小于等于 target 的值.
   private static int lowerBound(int[] nums, int target) {
-    int[] x = {1,2};
+    int[] x = {1, 2};
     int left = 0, right = nums.length - 1; // 闭区间 [left, right]
     while (left <= right) { // 区间不为空
       // 循环不变量：
